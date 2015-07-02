@@ -70,3 +70,21 @@ A simple JSON-encoder:
     ]
 
     print JSONEncoder().visit(data)
+
+
+Output::
+
+    [
+      "List",
+      "of",
+      42,
+      "items",
+      true,
+      {
+        "sub1": "some string",
+        "sub2": {
+          "sub2sub1": false,
+          "sub2sub2": 123
+        }
+      }
+    ]
