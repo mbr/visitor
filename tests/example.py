@@ -6,9 +6,6 @@ class JSONEncoder(Visitor):
         self.indent = 0
 
     def escape_str(self, s):
-        if isinstance(s, unicode):
-            s = s.encode('utf8')
-
         # note: this is not a good escape function, do not use this in
         # production!
         s = s.replace('\\', '\\\\')
@@ -24,7 +21,7 @@ class JSONEncoder(Visitor):
         s += '\n' + '  ' * self.indent + ']'
         return s
 
-    def visit_basestring(self, node):
+    def visit_str(self, node):
         return self.escape_str(node)
 
     def visit_int(self, node):
@@ -55,4 +52,4 @@ data = [
     }
 ]
 
-print JSONEncoder().visit(data)
+print(JSONEncoder().visit(data))
