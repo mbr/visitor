@@ -3,7 +3,9 @@ visitor
 
 A tiny library to facilitate `visitor
 <https://en.wikipedia.org/wiki/Visitor_pattern>`_ implementation in Python
-(which are slightly peculiar due to dynamic typing).
+(which are slightly peculiar due to dynamic typing). In fact, it is so small,
+you may just be better off copy & pasting the source straight into your
+project...
 
 
 Example use
