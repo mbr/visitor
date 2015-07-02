@@ -44,6 +44,9 @@ A simple JSON-encoder:
         def visit_int(self, node):
             return str(node)
 
+        def visit_bool(self, node):
+            return 'true' if node else 'false'
+
         def visit_dict(self, node):
             self.indent += 1
             s = '{\n' + '  ' * self.indent
