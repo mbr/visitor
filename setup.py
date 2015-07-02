@@ -13,7 +13,7 @@ def read(fname):
 setup(
     name='visitor',
     version='0.1.dev1',
-    description='A tiny visitor implementation for Python.',
+    description='A tiny pythonic visitor implementation.',
     long_description=read('README.rst'),
     author='Marc Brinkmann',
     author_email='git@marcbrinkmann.de',
