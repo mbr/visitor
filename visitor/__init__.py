@@ -37,7 +37,11 @@ class Visitor(object):
         :param node: The node to visit.
         :return: The return value of the called visitation function.
         """
-        for cls in type(node).mro():
+        if isinstance(node, type):
+            mro = node.mro()
+        else:
+            mro = type(node).mro()
+        for cls in mro:
             meth = getattr(self, 'visit_' + cls.__name__, None)
             if meth is None:
                 continue
