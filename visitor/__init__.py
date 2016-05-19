@@ -43,9 +43,8 @@ class Visitor(object):
             mro = type(node).mro()
         for cls in mro:
             meth = getattr(self, 'visit_' + cls.__name__, None)
-            if meth is None:
-                continue
-            return meth(node)
+            if meth is not None:
+                return meth(node)
 
         raise NotImplementedError('No visitation method visit_{}'
                                   .format(node.__class__.__name__))
